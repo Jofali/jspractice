@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" >
+  <title>求和</title>
+</head>
+<body>
+<div>
+    <input type="text" value="1"> +
+    <input type="text" value="1"> = <span>?</span>
+</div>
+    <input type="button" value="求和">
+    <script type="text/javascript">
+     window.onload = function(){
+      var oInput = document.getElementsByTagName("input");
+      var oSpan = document.getElementsByTagName("span")[0];
+      oInput[2].onclick = function(){
+        var sum = parseInt(oInput[0].value) + parseInt(oInput[1].value);
+        oSpan.innerHTML = sum;
+      }
+     }
+    </script>
+</body>
+</html>

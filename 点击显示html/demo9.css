@@ -1,0 +1,6 @@
+*{margin: 0;padding: 0;font-family: "微软雅黑";font-size: 20px;}
+h1,h2,h3,h4,h5,h6{font-size: normal;font-weight: normal;}
+a{text-decoration: none;}
+ul,li,ol{list-style: none;}
+.wraper{width:100%;position: relative;height: auto;text-align: center;}
+#demo9 ul li{width:800px;border:1px solid blue;padding: 10px;margin:20px auto;font-size: 20px;cursor:pointer;}

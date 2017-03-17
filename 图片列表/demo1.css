@@ -1,0 +1,10 @@
+*{margin: 0;padding: 0;font-family: "微软雅黑";font-size: 12px;}
+.wraper{width:100%;position: relative;height: auto;}
+.center{width:710px;height: 298px;margin: 10px auto;border: 1px solid #333;}
+.center ul:after{content:"";display: block;clear:both;}
+h1,h2,h3,h4,h5,h6{font-size: normal;font-weight: normal;}
+a{text-decoration: none;}
+ul,li,ol{list-style: none;}
+.center ul li img{font-size:0;opacity: 0.3;filter:Alpha(opacity=30);}
+.center ul li{float: left;border:1px solid #a1a1a1;margin:10px 0 0 10px;}
+.center ul .change img{opacity: 1;filter:Alpha(opacity=100);}

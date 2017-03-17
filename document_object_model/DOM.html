@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document Object Model</title>
+    <link rel="stylesheet" type="text/css" href="dom.css">
+  </head>
+  <body>
+     <h1>DOM</h1>
+     <ol>
+       <li>getElmentById(id)</li>
+       <li>getElementsByTagName(tagname)</li>
+       <li>getElementsByClassname(classname)</li>
+       <li>getAttribute(attrbute)</li>
+       <li>setAttribute(attribute,value)</li>
+     </ol>
+     <h2>NEWS DOM</h2>
+     <ol>
+       <li>childNodes
+           <ul>
+             <li>node.firstChild === node.childNodes</li>
+             <li>lastChild === node.childNodes[node.ChildNodes.length-1]</li>
+           </ul>
+       </li>
+       <li>nodeType</li>
+       <li>nodeValue</li>
+     </ol>
+     <h2>Picture Library</h2>
+     <ul id="imagegallery">
+       <li><a href="1.jpg" target="blank" title="this is a new.">5G Communication</a></li>
+       <li><a href="2.jpg" title="this is another new.">HSBC</a></li>
+       <li><a href="3.png" title="this is a demo.">Emirates</a></li>
+       <li><a href="4.jpg">MiLi Skinmate</a></li>
+       <li><a href="5.jpg" title="Choose an image.">Reset</a></li>
+     </ul>
+     <div>
+       <img id="placeholder" src="5.jpg" title="My Images Gallery" />
+       <p id="description">Choose an image.</p>
+     </div>
+    <script type="text/javascript" src="dom.js"></script>
+  </body>
+</html>

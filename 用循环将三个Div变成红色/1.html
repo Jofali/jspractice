@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+    <ul id="NewsType_Bl">
+        <li>1111111</li>
+        <li>2222222</li>
+        <li>3333333</li>
+        <li>4444444</li>
+        <li>5555555</li>
+    </ul>
+</div>
+<script type="text/javascript">
+        var oSelect = document.getElementById("NewsType_Bl");
+        var oElement = oSelect.getElementsByTagName("li");
+        for (var i = 0; i < oElement.length; i++) {
+            oElement[i].index = i;
+            oElement[i].onclick = function () {
+                for (var j = 0; j < oElement.length; j++) {
+                    oElement[j].style.background = "";
+                }
+                this.style.background = "#1a68cb";
+                theUrl = "2.html?mid="+this.index;
+                location.href = theUrl;
+            }
+        }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

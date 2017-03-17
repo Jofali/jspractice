@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style type="text/css">
+    *{padding:0;margin: 0;}
+    #box{width:300px;height:120px;margin:0 auto;border:1px solid blue;background: #c8e0ff;padding: 10px;}
+    .btn{display:inline-block;width:auto;background:#62bdf7;padding: 5px;font-size: 14px;margin-right: 10px;color:#fff;}
+  </style>
+</head>
+<body>
+  <div id="box">
+    <a class="btn">Get Style</a>
+    <a class="btn">Set Style</a>
+    <a class="btn">Default Style</a>
+  </div>
+  <script type="text/javascript">
+      function css(obj,attr,value){
+        switch(arguments.length){
+          case 2:
+             if(typeof arguments[1] == "object"){
+              for(var i in attr) obj.style[i] = attr[i]
+             } else{
+              return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj,null)[attr]
+             }
+          case 3:
+             obj.style[attr] = value;
+        }
+      }
+      window.onload = function(){
+        var box = document.getElementById("box");
+        var oa =box.getElementsByTagName("a");
+        oa[0].onclick = function(){
+          alert("width:" + css(box,"width") + "\nheight:" + css(box,"height") + "\nbackgroundColor:" + css(box,"backgroundColor"));
+        }
+        oa[1].onclick = function(){
+          css(box,{width:"400px",height:"200px",backgroundColor:"#ff6600"});
+          for(var i = 0;i <oa.length;i++) css(oa[i],"backgroundColor","red");
+        }
+        oa[2].onclick = function(){
+          css(box,{width:"",height:"",backgroundColor:""});
+          for(var i = 0;i <oa.length;i++) css(oa[i],"backgroundColor","");
+        }
+      }
+    </script>
+</body>
+</html>

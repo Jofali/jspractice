@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>setTimeout应用</title>
+   <!--  <style>
+*{margin:0;padding:0;}
+ul,li{list-style-type:none;}
+.subnav{background: linear-gradient(#225d98, #a7d3ff);}
+#nav{background: linear-gradient(#a7d3ff, #225d98);border:1px solid #333;border-radius:5px;}
+#nav{position:relative;width:910px;margin:10px auto;}
+#nav ul{height:36px;line-height:36px;margin-left:10px;padding-right:10px;overflow:hidden;}
+#nav ul li{float:left;width:110px;margin-left:-2px;}
+#nav ul li a{font-size:14px;color:#fff;width:102px;display:block;text-align:center;text-decoration:none;margin:0 2px 0 4px;}
+#nav ul li a:hover{font-weight:700;}
+#nav .subnav{display:none;position:absolute;top:41px;width:auto!important;min-width:110px;height:27px;line-height:27px;white-space:nowrap;}
+#nav .subnav p{margin-left:10px;padding-right:10px;}
+#nav .subnav p span{display:block;color:#fff;}
+#nav .subnav p a{font-size:12px;display:inline;color:#fff;text-decoration:none;margin:0 5px;padding:0 2px;}
+#nav .subnav p a:hover{font-weight:400;border-bottom:2px solid;}
+#nav .subnav .arrow{position:absolute;top:-4px;display:block;width:11px;height:5px;}
+</style>-->
+   <style type="text/css">
+      *{margin:0;padding:0;}
+      ul,li{list-style: none;}
+      a{text-decoration: none;color:#fff;}
+      .subnav{background: linear-gradient(#225d98, #a7d3ff);}
+      .subnav{display:none;position: absolute;top:52px;width:auto !important;min-width:110px;height:40px;line-height: 40px;color:#333;}
+      #nav ul{height:50px;line-height:36px;margin-left:10px;padding-right:10px;overflow:hidden;}
+      #nav ul li{margin:10px 0;border-right:1px solid #fff;float:left;width:110px;}
+      #nav ul li a{font-size:14px;color:#fff;width:102px;display:block;text-align:center;text-decoration:none;margin:0 2px 0 4px;}
+      #nav li a:hover{background:linear-gradient(#3a6997, #c0ddf9);}
+      #nav{position:relative;width:900px;margin:0 auto;background: linear-gradient(#a7d3ff, #225d98);border:1px solid #333;border-radius:5px;}
+      #nav .subnav p{margin-left:10px;padding-right:10px;}
+      #nav .subnav p span{display:block;color:#fff;}
+      #nav .subnav p a{font-size:12px;display:inline;color:#fff;text-decoration:none;margin:0 5px;padding:0 2px;}
+      #nav .subnav p a:hover{font-weight:400;border-bottom:1px solid;}
+    </style>
+  </head>
+  <body>
+    <div id="nav">
+      <ul>
+        <li>
+          <a href="javascript:void(0);">MiLi</a>
+        </li>
+        <li>
+          <a href="javascript:void(0);">News</a>
+          <div class="subnav">
+            <p>
+              <a href="javascript:void();">iData Pro</a>|
+              <a href="javascript:void();">Pure</a>|
+              <a href="javascript:void();">iData Air</a>|
+              <a href="javascript:void();">Skinmate</a>|
+              <a href="javascript:void();">iDataCable</a>|
+              <a href="javascript:void();">iDataCable Pro</a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <a href="javascript:void(0);">Store</a>
+          <div class="subnav">
+            <p>
+              <a href="javascript:void();">iData Pro</a>|
+              <a href="javascript:void();">Pure</a>|
+              <a href="javascript:void();">iData Air</a>|
+              <a href="javascript:void();">Skinmate</a>|
+              <a href="javascript:void();">iDataCable</a>|
+              <a href="javascript:void();">iDataCable Pro</a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <a href="javascript:void(0);">Support</a>
+          <div class="subnav">
+            <p>
+              <a href="javascript:void(0);">iData Pro</a>|
+              <a href="javascript:void(0);">Pure</a>|
+              <a href="javascript:void(0);">iData Air</a>|
+              <a href="javascript:void(0);">Skinmate</a>|
+              <a href="javascript:void(0);">iDataCable</a>|
+              <a href="javascript:void(0);">iDataCable Pro</a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <a href="javascript:void(0);">Contact</a>
+          <div class="subnav">
+            <p>
+              <a href="javascript:void();">iData Pro</a>|
+              <a href="javascript:void();">Pure</a>|
+              <a href="javascript:void();">iData Air</a>|
+              <a href="javascript:void();">Skinmate</a>|
+              <a href="javascript:void();">iDataCable</a>|
+              <a href="javascript:void();">iDataCable Pro</a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <a href="javascript:void(0);">Others</a>
+          <div class="subnav">
+            <p>
+              <a href="javascript:void();">iData Pro</a>|
+              <a href="javascript:void();">Pure</a>|
+              <a href="javascript:void();">iData Air</a>|
+              <a href="javascript:void();">Skinmate</a>|
+              <a href="javascript:void();">iDataCable</a>|
+              <a href="javascript:void();">iDataCable Pro</a>
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <script type="text/javascript">
+          get = {
+              byId : function(tid){
+                return document.getElementById(tid)
+              },
+              byClassName : function(oclass,tid){
+                var aClass = [];
+                var reclass = new RegExp("(^| )" + oclass + "( |$)");
+                var tTag = this.byTagName("*",tid);
+                for(var i = 0;i < tTag.length;i++) reclass.test(tTag[i].className) && aClass.push(tTag[i]);
+                  return aClass
+              },
+              byTagName: function(elem, obj) {
+                return (obj || document).getElementsByTagName(elem)
+              }
+            }
+          window.onload = function(){
+            tBanner = get.byId("nav");
+            tClass = get.byClassName("subnav",tBanner);
+            Class = timer = null;
+            tLi = get.byTagName("li");
+            var i = 0;
+            for(i = 1;i < tClass.length;i++){
+              tLi[i].onmouseover = function(){
+                for(i = 0;i < tClass.length;i++) tClass[i].style.display = "none";
+                oClass = get.byClassName("subnav",this)[0];
+                oClass.style.display = "block";
+                tBanner.offsetWidth - this.offsetLeft > oClass.offsetWidth ? oClass.style.left = this.offsetLeft + "px" : oClass.style.right = 0;
+                   clearTimeout(timer);
+                // oClass.onmouseover = function (event){
+                //     (event || window.event).cancelBubble = true;
+                //     clearTimeout(timer);
+                //}
+                //注释部分代码是阻止事件冒泡；截止本次（2016.11.10.16:43）未能理解其在本文中的作用。
+              }
+              tLi[i].onmouseout = function(){
+                timer = setTimeout(function(){
+                  oClass.style.display = "none"
+                },1000);
+              }
+            }
+          }
+      </script>
+    </div>
+  </body>
+</html>
